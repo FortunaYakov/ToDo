@@ -18,6 +18,7 @@ class CreateTodosTable extends Migration
             $table->text('desc');
             $table->boolean('status')->default(false);
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

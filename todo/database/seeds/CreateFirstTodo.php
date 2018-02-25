@@ -13,6 +13,6 @@ class CreateFirstTodo extends Seeder
      */
     public function run()
     {
-      Todo::create(['desc' => 'Create awesome app!']);
+      Todo::create(['desc' => 'Create awesome app!','user_id' => 1]);
     }
 }

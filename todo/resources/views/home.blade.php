@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header"></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,7 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     <table class="table">
                       <thead>
                         <tr>
@@ -30,14 +29,10 @@
                               {{ $todo->desc }}
                             </td>
                             <td>
-                              @if ($todo->status)
-                                Done
-                              @else
-                                Undone
-                              @endif
+                              {{ $todo->status() }}
                             </td>
                             <td>
-                              <a href="{{ route('users.show', $todo->user->id) }}">{{ $todo->user->name }}</a>
+                       <a href="{{ route('users.show', $todo->user->id) }}">{{ $todo->user->name }}</a>
                             </td>
                             <td>
                               <form method="POST" action="{{ route('toggle_status') }}">
